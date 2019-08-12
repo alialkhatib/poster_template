@@ -4,7 +4,7 @@
 
 This is a pretty basic (in both the formal and casual senses) poster template for people who kinda just want something that's "not objectionably bad". It produces something that looks a lot like the following:
 
-![](main.png)
+![](preview.png)
 
 
 If you'd like to help make it less objectionably bad, please feel free to file an issue or make a pull request or something.

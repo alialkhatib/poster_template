@@ -1,0 +1,173 @@
+% Emory Theme for the tikzposter
+% package.
+%
+% Author: Blair J. Rossetti
+% Last Modified: 2018-11-15
+%
+
+% -- COLORS --
+
+
+
+% stanford colors
+\definecolor{CardinalRed}{HTML}{8c1515}
+\definecolor{White}{HTML}{ffffff}
+\definecolor{CoolGrey}{HTML}{4d4f53}
+\definecolor{Black}{HTML}{2e2d29}
+\definecolor{BrightRed}{HTML}{B1040E}
+\definecolor{Chocolate}{HTML}{2F2424}
+\definecolor{Stone}{HTML}{544948}
+\definecolor{Fog}{HTML}{F4F4F4}
+\definecolor{LightSandstone}{HTML}{F9F6EF}
+\definecolor{Sandstone}{HTML}{d2c295}
+\definecolor{WarmGrey}{HTML}{3f3c30}
+\definecolor{Beige}{HTML}{9d9573}
+\definecolor{LightSage}{HTML}{c7d1c5}
+\definecolor{Clay}{HTML}{5f574f}
+\definecolor{Cloud}{HTML}{dad7cb}
+\definecolor{Driftwood}{HTML}{b6b1a9}
+\definecolor{Sandhill}{HTML}{b3995d}
+\definecolor{PaloAlto}{HTML}{175e54}
+\definecolor{Teal}{HTML}{00505c}
+\definecolor{Purple}{HTML}{53284f}
+\definecolor{Redwood}{HTML}{8d3c1e}
+\definecolor{Brown}{HTML}{5e3032}
+\definecolor{Sky}{HTML}{0098db}
+\definecolor{Lagunita}{HTML}{007c92}
+\definecolor{Mint}{HTML}{009b76}
+\definecolor{Gold}{HTML}{b26f16}
+\definecolor{Sun}{HTML}{eaab00}
+\definecolor{Poppy}{HTML}{e98300}
+
+
+
+
+
+
+
+% emory primary palette
+\definecolor{EmoryBlue}{HTML}{002878} % Pantone 280(primary)
+\definecolor{MediumBlue}{HTML}{0033a0} % Pantone 286
+\definecolor{LightBlue}{HTML}{007dba} % Pantone 7461
+\definecolor{Yellow}{HTML}{f2a900} % Pantone 130
+\definecolor{Gold}{HTML}{b58500} % Pantone 125
+\definecolor{MetallicGold}{HTML}{8d702a} % Pantone 8640
+
+% emory secondary palette
+\definecolor{Cyan}{HTML}{00aeef} % Pantone Cyan
+\definecolor{SkyBlue}{HTML}{41b6e6} % Pantone 298
+\definecolor{Teal}{HTML}{487f84} % Pantone 5483
+\definecolor{KellyGreen}{HTML}{348338} % Pantone 7740
+\definecolor{SeaGreen}{HTML}{006c5b} % Pantone 568
+\definecolor{Olive}{HTML}{5c8118} % Pantone 370
+\definecolor{Orange}{HTML}{c35413} % Pantone 1595
+\definecolor{Red}{HTML}{da291c} % Pantone 485
+\definecolor{Magenta}{HTML}{c6007e} % Pantone 233
+\definecolor{Purple}{HTML}{6558b1} % Pantone 2102
+\definecolor{Grape}{HTML}{6d2077} % Pantone 259
+
+% emory neutrals palette
+\definecolor{Black}{HTML}{101820} % Pantone Black 6
+\definecolor{CoolGray5}{HTML}{b1b3b3} % Pantone Cool Gray 5
+\definecolor{CoolGray2}{HTML}{d0d0ce} % Pantone Cool Gray 2
+\definecolor{CoolGray1}{HTML}{d9d9d9} % Pantone Cool Gray 1
+
+% emory web palette
+\definecolor{LightYellow}{HTML}{ffde75}
+
+% tikzposter color palette
+\definecolorpalette{StanfordPalette} {
+    \definecolor{colorOne}{named}{CardinalRed}
+    \definecolor{colorTwo}{named}{Stone}
+    \definecolor{colorThree}{named}{Poppy}
+}
+
+% tikzposter style
+\definecolorstyle{StanfordStyle} {
+    \usecolorpalette{StanfordPalette}
+}{
+    % background
+    \colorlet{backgroundcolor}{white}
+    \colorlet{framecolor}{white}
+    % title colors
+    \colorlet{titlefgcolor}{Black}
+    \colorlet{titlebgcolor}{white}
+    % block COLORS
+    \colorlet{blocktitlebgcolor}{colorOne}
+    \colorlet{blocktitlefgcolor}{white}
+    \colorlet{blockbodybgcolor}{white}
+    \colorlet{blockbodyfgcolor}{Black}
+    % innerblock colors
+    \colorlet{innerblocktitlebgcolor}{white}
+    \colorlet{innerblocktitlefgcolor}{Black}
+    \colorlet{innerblockbodybgcolor}{colorTwo}
+    \colorlet{innerblockbodyfgcolor}{Black}
+    % note colors
+    \colorlet{notefgcolor}{Black}
+    \colorlet{notebgcolor}{colorTwo}
+    \colorlet{noteframecolor}{colorTwo}
+}
+
+% -- STYLE --
+
+% background
+\definebackgroundstyle{EmoryBackgroundStyle}{
+    \draw[line width=0pt, color=framecolor, fill=backgroundcolor]
+    (bottomleft) rectangle (topright);
+}
+
+% title
+\definetitlestyle{StanfordTitleStyle}{
+    width=\textwidth, linewidth=5pt, titletotopverticalspace=0in
+}{
+    \begin{scope}[line width=\titlelinewidth]
+    \draw[color=colorThree]
+    (\titleposleft,\titleposbottom)--(\titleposright,\titleposbottom);
+    \end{scope}
+}
+
+% block
+\defineblockstyle{StanfordBlockStyle}{
+    titlewidthscale=1, bodywidthscale=1, roundedcorners=0
+}{
+    \draw[color=framecolor, fill=blockbodybgcolor,
+    rounded corners=\blockroundedcorners] (blockbody.south west)
+    rectangle (blockbody.north east);
+    \ifBlockHasTitle
+    \draw[color=framecolor, fill=blocktitlebgcolor,
+    rounded corners=\blockroundedcorners] (blocktitle.south west)
+    rectangle (blocktitle.north east);
+    \fi
+}
+
+% -- THEME -- 
+% emory theme
+\definelayouttheme{StanfordTheme}{
+    \usecolorstyle[colorPalette=StanfordPalette]{StanfordStyle}
+    \usebackgroundstyle{EmoryBackgroundStyle}
+    \usetitlestyle{StanfordTitleStyle}
+    \useblockstyle{StanfordBlockStyle}
+    \useinnerblockstyle{Default}
+    \usenotestyle{Default}
+}
+
+% -- TITLE FORMAT --
+
+% place logo to right of centered title
+\makeatletter
+\renewcommand\TP@maketitle{%
+   \centering
+   \begin{minipage}[b]{0.8\linewidth}
+        \centering
+        \color{titlefgcolor}
+        {\bfseries \Huge \sc \@title \par}
+        \vspace*{1em}
+        {\huge \@author \par}
+        \vspace*{1em}
+        {\LARGE \@institute}
+    \end{minipage}%
+    \tikz[remember picture,overlay]\node[anchor=south east,xshift=0.4875\linewidth,inner sep=0pt] {%
+       \@titlegraphic
+    };
+}
+\makeatother

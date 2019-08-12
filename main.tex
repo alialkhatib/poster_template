@@ -1,0 +1,118 @@
+\documentclass[20pt,margin=0in,innermargin=0in]{tikzposter}
+\geometry{paperwidth=36in,paperheight=24in}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts,sourceserifpro}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathrsfs,blindtext,nth,microtype}
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+\usepackage[backend=bibtex,style=numeric]{biblatex}
+\usepackage{stanford-theme}
+
+\usepackage{mwe} % for placeholder images
+\bibliography{references}
+
+
+% set theme parameters
+\tikzposterlatexaffectionproofoff
+\usetheme{StanfordTheme}
+\usecolorstyle{StanfordStyle}
+
+
+\title{Poster Template}
+\author{person name\\\texttt{personname@stanford.edu}}
+\institute{Department of Computer Science, Stanford University} % you probably don't need this at a Stanford event!
+\titlegraphic{\includegraphics[height=0.125\textheight]{stanford}}
+
+
+\begin{document}
+
+\maketitle[titletotopverticalspace=1in]
+\centering
+
+\begin{columns}
+    \column{0.3}
+    \block{\nth{1} Column}{
+
+    You can have \textbf{however many} columns as you want, and
+    you can make them \textbf{whatever widths} you want.
+    You can even have columns within columns.
+
+    \vspace{1em}
+
+    You should take this document as a \textbf{starting point}, if you take it at all.
+    It's no good if everyone copies this layout, pastes in their text, and goes off to the printers.
+    It's worth thinking for a minute or two about if you want the poster in thirds, or half-half, or what.
+    
+    \vspace{1em}
+
+    To change the width of a column, change the value for \texttt{\textbackslash column\{0.3\}} (30\% of the width of the page) to something else (like \texttt{\textbackslash column\{0.4\}} for 40\% or \texttt{\textbackslash column\{0.62312\}} for 62.312\%). Just try to get the columns to add up to 1.0.
+
+
+    }
+    
+    \block{\nth{2} Column}{
+    \blindtext[1]
+
+    \vspace{1em}
+
+    {\scshape Don't get too close to margins.
+
+    No, seriously. There's nothing but trouble here.}
+
+    }
+
+    \column{0.45}
+    \block{\nth{3} Column}{
+        You can have some formulas if you want:
+
+        \begin{align*} q^{-3} & \le \frac{\overline{\sqrt{2}-\emptyset}}{\tilde{\omega} \left( e, \dots, \frac{1}{P ( A )} \right)} \wedge p \left( \bar{K}^{-5}, \tilde{m} \right) \\ & = \max_{B \to \emptyset}  1 \pm \dots \cup \pi \left(-q ( d ), \dots, \mathscr{{C}}'' \right)  \\ & \le \left\{ 1^{-7} \colon \cosh^{-1} \left(-\kappa \right) \le \max \int_{\hat{M}} \tanh \left( C^{5} \right) \,d \theta \right\} \\ & \le \prod  \cosh^{-1} \left( \pi^{-8} \right) + \dots \vee \omega \left(-\pi, \infty \sqrt{2} \right) \end{align*}
+
+        You can also have a figure:
+        
+        \vspace{1em}
+        \begin{tikzfigure}[Here's where captions go. Captions are good.]
+            \includegraphics[width=0.8\linewidth]{example-image}
+        \end{tikzfigure}
+        % \vspace{1em}
+    }
+
+
+
+
+    \column{0.25}
+    \block{\nth{4} Column}{
+    % \coloredbox[bgcolor=CardinalRed,fgcolor=White,framecolor=White]{
+    I think you're getting the idea.
+
+    % But you can also do a colored box of text.
+    % }
+        
+    \vspace{6em}
+    }
+    
+
+    \block{Acknowledgments}{
+    Be sure to thank people who made the work you did possible --- specifically, funding sources, people and organizations who provided data, etc\dots
+
+    \vspace{2em}
+
+    There's no need to acknowledge your collaborators (the people you list at the top of the poster), because their contribution is being acknowledged in the form of co-authorship.
+
+    \vspace{2em}
+
+    \textit{Fun fact: author order is ``a whole thing''; you should check with your mentor about the norms in whatever field you're publishing to.}
+    }
+    
+    % \block{References}{
+    %     \vspace{-1em}
+    %     \begin{footnotesize}
+    %     \printbibliography[heading=none]
+    %     You probably won't need to list all the references, but if you do, you can uncomment this block
+    %     \end{footnotesize}
+    % }
+\end{columns}
+\end{document}

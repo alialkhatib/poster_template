@@ -2,7 +2,12 @@
 
 *First off, thanks to Blair Rossetti for [the template][Emory Template] I took and turned into this repository.*
 
-This is a pretty basic (in both the formal and casual senses) poster template for people who kinda just want something that's "not objectionably bad". If you'd like to help make it less objectionably bad, please feel free to file an issue or make a pull request or something.
+This is a pretty basic (in both the formal and casual senses) poster template for people who kinda just want something that's "not objectionably bad". It produces something that looks a lot like the following:
+
+![here's the preview][posterthumb]
+
+
+If you'd like to help make it less objectionably bad, please feel free to file an issue or make a pull request or something.
 
 There are a lot of norms that you'll want to be aware of - things like:
 
@@ -17,3 +22,4 @@ If you encounter something that you're not sure what to do about, and especially
 
 
 [Emory Template]: https://www.overleaf.com/latex/templates/emory-poster-template/skpfmpxjnqdh
+[posterthumb]: main.png

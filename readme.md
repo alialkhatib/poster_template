@@ -13,7 +13,7 @@ There are a lot of norms that you'll want to be aware of - things like:
 
 - poster aspect ratio and size (what's typical for your field?)
 - author order
-- layout (2 column? 3? 6? Just kidding I've never seen 6 columns)
+- layout (2 column? 3? 6? Just kidding ~I've never seen 6 columns~ I have now seen a poster with 9 columns. It was very organized and looked nice IMO. So I guess do whatever feels right because you're smart and have good judgment.)
 - ???
 
 So, as stated, this is just a starting point. Take it and make it your own. It's my hope that things like column widths, numbers, etc... are pretty easy to work with, but if you encounter issues, please let me know (either contact me or file a GitHub issue!)
